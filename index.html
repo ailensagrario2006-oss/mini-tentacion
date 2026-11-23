@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -5,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8eeee">
   <meta name="description" content="Mini Tentación. Postres artesanales preparados con amor.">
+
   <title>Mini Tentación | Postres artesanales</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <header class="site-header">
@@ -28,13 +34,25 @@
   </header>
 
   <main>
+
     <section class="hero" id="inicio">
       <div class="hero-copy">
         <span class="eyebrow">UN MIMO PARA TU DÍA</span>
-        <h1>Pequeños placeres,<br><em>grandes momentos.</em></h1>
-        <p>Postres preparados con amor para endulzar tus momentos especiales.</p>
-        <a class="button" href="#productos">Descubrir productos</a>
+
+        <h1>
+          Pequeños placeres,<br>
+          <em>grandes momentos.</em>
+        </h1>
+
+        <p>
+          Postres preparados con amor para endulzar tus momentos especiales.
+        </p>
+
+        <a class="button" href="#productos">
+          Descubrir productos
+        </a>
       </div>
+
       <div class="hero-image">
         <img id="heroImage" src="assets/oreo.jpg" alt="Oreo, la carita de Mini Tentación">
       </div>
@@ -42,8 +60,13 @@
 
     <section class="products section" id="productos">
       <span class="eyebrow">HECHOS CON AMOR</span>
+
       <h2>Nuestras tentaciones</h2>
-      <p class="section-intro">Elegí tu favorito y disfrutá algo rico.</p>
+
+      <p class="section-intro">
+        Elegí tu favorito y disfrutá algo rico.
+      </p>
+
       <div id="productList" class="product-grid"></div>
     </section>
 
@@ -51,20 +74,46 @@
       <div class="about-image">
         <img id="aboutImage" src="assets/oreo.jpg" alt="Oreo">
       </div>
+
       <div class="about-copy">
         <span class="eyebrow">UN POQUITO DE NOSOTROS</span>
+
         <h2>Una historia dulce ♡</h2>
-        <p id="aboutText">En Mini Tentación creemos que los momentos más lindos también se disfrutan con algo rico. Preparamos dulces para compartir con las personas que más querés y crear recuerdos especiales. Oreo, nuestro perrito, es la carita de la marca.</p>
+
+        <p id="aboutText">
+          En Mini Tentación creemos que los momentos más lindos también se disfrutan con algo rico. Preparamos dulces para compartir con las personas que más querés y crear recuerdos especiales. Oreo, nuestro perrito, es la carita de la marca.
+        </p>
       </div>
     </section>
 
     <section class="contact section" id="contacto">
       <span class="eyebrow">ESTAMOS PARA ENDULZAR TU DÍA</span>
+
       <h2>¿Tenés un antojo?</h2>
+
       <p>Nos encantaría preparar algo rico para vos.</p>
-      <a class="button" id="whatsappLink" href="https://wa.me/5492233491455" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="instagram" id="instagramLink" href="https://instagram.com/minitentacion.mdp" target="_blank" rel="noopener">Instagram · @minitentacion.mdp</a>
+
+      <a
+        class="button"
+        id="whatsappLink"
+        href="https://wa.me/5492233491455"
+        target="_blank"
+        rel="noopener"
+      >
+        Pedir por WhatsApp
+      </a>
+
+      <a
+        class="instagram"
+        id="instagramLink"
+        href="https://instagram.com/minitentacion.mdp"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram · @minitentacion.mdp
+      </a>
     </section>
+
   </main>
 
   <footer>
@@ -73,23 +122,59 @@
   </footer>
 
   <div id="productModal" class="modal" aria-hidden="true">
+
     <div class="modal-backdrop" data-close-modal></div>
-    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalName">
-      <button class="modal-close" type="button" aria-label="Cerrar" data-close-modal>×</button>
+
+    <article
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalName"
+    >
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar"
+        data-close-modal
+      >
+        ×
+      </button>
+
       <img id="modalImage" src="" alt="">
+
       <div class="modal-content">
         <span class="eyebrow">UNA MINI TENTACIÓN</span>
+
         <h2 id="modalName"></h2>
+
         <p id="modalDescription"></p>
+
         <strong id="modalPrice"></strong>
-        <a id="modalOrder" class="button" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+
+        <a
+          id="modalOrder"
+          class="button"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          Pedir por WhatsApp
+        </a>
       </div>
     </article>
   </div>
-<button id="adminAccess" class="admin-access" type="button">Administrar página</button>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js"></script>
-<script src="app.js"></script>
+  <button
+    id="adminAccess"
+    class="admin-access"
+    type="button"
+  >
+    Administrar página
+  </button>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+
 </body>
 </html>
