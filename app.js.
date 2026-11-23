@@ -1,0 +1,101 @@
+// MINI TENTACIÓN
+// Funciones de la página
+
+const WHATSAPP = "5492233491455";
+
+const productos = [
+  {
+    id: 1,
+    nombre: "Postre de ejemplo",
+    precio: "Consultar precio",
+    descripcion: "Un adelanto de las delicias que vas a encontrar en Mini Tentación.",
+    imagen: "assets/postre1.jpg"
+  },
+  {
+    id: 2,
+    nombre: "Otra tentación",
+    precio: "Consultar precio",
+    descripcion: "Muy pronto vas a poder descubrir todos nuestros postres.",
+    imagen: "assets/postre2.jpg"
+  }
+];
+
+// Mostrar productos
+function mostrarProductos() {
+  const contenedor = document.getElementById("productList");
+
+  if (!contenedor) return;
+
+  contenedor.innerHTML = "";
+
+  productos.forEach(producto => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "product-card";
+
+    tarjeta.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}"
+        onerror="this.style.display='none'">
+      <div class="product-info">
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <strong class="product-price">${producto.precio}</strong>
+        <button class="button" type="button"
+          onclick="verProducto(${producto.id})">
+          Ver detalles
+        </button>
+      </div>
+    `;
+
+    contenedor.appendChild(tarjeta);
+  });
+}
+
+// Abrir detalles del producto
+function verProducto(id) {
+  const producto = productos.find(item => item.id === id);
+  if (!producto) return;
+
+  document.getElementById("modalName").textContent = producto.nombre;
+  document.getElementById("modalDescription").textContent = producto.descripcion;
+  document.getElementById("modalPrice").textContent = producto.precio;
+
+  const imagen = document.getElementById("modalImage");
+  imagen.src = producto.imagen;
+  imagen.alt = producto.nombre;
+
+  const mensaje = encodeURIComponent(
+    `¡Hola! Quiero consultar por ${producto.nombre}.`
+  );
+
+  document.getElementById("modalOrder").href =
+    `https://wa.me/${WHATSAPP}?text=${mensaje}`;
+
+  const modal = document.getElementById("productModal");
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+// Cerrar ventana de detalles
+function cerrarModal() {
+  const modal = document.getElementById("productModal");
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll("[data-close-modal]").forEach(elemento => {
+  elemento.addEventListener("click", cerrarModal);
+});
+
+document.addEventListener("keydown", evento => {
+  if (evento.key === "Escape") cerrarModal();
+});
+
+// Acceso de administración
+document.getElementById("adminAccess").addEventListener("click", () => {
+  alert("¡Estamos preparando tu panel privado de administración! En el siguiente paso conectaremos la página con tu base de datos para que puedas editarla y guardar los cambios.");
+});
+
+// Mostrar los productos al cargar
+document.addEventListener("DOMContentLoaded", mostrarProductos);
