@@ -1,0 +1,399 @@
+:root {
+  --pink: #efd7d6;
+  --pink-light: #f8eeeb;
+  --cream: #fffaf5;
+  --brown: #594139;
+  --brown-light: #80675d;
+  --terracotta: #b77f70;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  min-height: 88px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream);
+  border-bottom: 1px solid #eee1da;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  font-size: 13px;
+  transition: color .2s;
+}
+
+nav a:hover,
+.instagram:hover {
+  color: var(--terracotta);
+}
+
+.hero {
+  min-height: 570px;
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 50px;
+  background: var(--pink-light);
+}
+
+.hero-copy {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: var(--terracotta);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(43px, 5.5vw, 72px);
+  line-height: 1.12;
+  margin: 22px 0;
+}
+
+h1 em {
+  color: var(--terracotta);
+}
+
+.hero-copy p,
+.section-intro,
+.contact p {
+  color: var(--brown-light);
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 28px;
+  margin-top: 28px;
+  border-radius: 40px;
+  background: var(--brown);
+  color: white;
+  font-size: 13px;
+  transition: .25s;
+  border: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: 390px;
+  border-radius: 48% 48% 20px 20px;
+  overflow: hidden;
+  background: var(--pink);
+  border: 10px solid #ffffff70;
+}
+
+.hero-image img,
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section {
+  padding: 100px 9%;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 17px 0;
+}
+
+.section-intro {
+  font-size: 14px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid #eee3dc;
+  border-radius: 16px;
+  background: var(--white);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #59413912;
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: var(--pink-light);
+}
+
+.product-info {
+  padding: 22px;
+}
+
+.product-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  margin-bottom: 9px;
+}
+
+.product-info p {
+  color: var(--brown-light);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.product-price {
+  display: block;
+  margin-top: 12px;
+}
+
+.product-info .button {
+  margin-top: 17px;
+  padding: 12px 22px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+  background: var(--pink-light);
+  text-align: left;
+}
+
+.about-image {
+  height: 360px;
+  overflow: hidden;
+  border-radius: 180px 180px 18px 18px;
+  background: var(--pink);
+}
+
+.about-copy p {
+  color: var(--brown-light);
+  line-height: 2;
+  font-size: 15px;
+}
+
+.contact {
+  background: var(--cream);
+}
+
+.contact p {
+  margin-top: 10px;
+}
+
+.instagram {
+  display: block;
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+footer {
+  padding: 28px 8%;
+  display: flex;
+  justify-content: space-between;
+  background: var(--brown);
+  color: white;
+  font-size: 12px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #34231fcc;
+  backdrop-filter: blur(5px);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(850px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--cream);
+  border-radius: 20px;
+  box-shadow: 0 25px 80px #0003;
+}
+
+.modal-card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  background: var(--pink-light);
+}
+
+.modal-content {
+  padding: 55px 38px;
+  align-self: center;
+}
+
+.modal-content h2 {
+  font-size: 36px;
+}
+
+.modal-content p {
+  color: var(--brown-light);
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: var(--brown);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.admin-access {
+  position: fixed;
+  bottom: 14px;
+  right: 14px;
+  padding: 10px 15px;
+  border: 1px solid #e9d8d1;
+  border-radius: 30px;
+  background: #fffaf5eF;
+  color: var(--brown-light);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .site-header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+    padding: 65px 8%;
+    gap: 35px;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .section {
+    padding: 75px 7%;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .modal-card {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-card > img {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .modal-content {
+    padding: 30px 25px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
